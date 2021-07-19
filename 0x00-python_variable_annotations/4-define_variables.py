@@ -1,8 +1,8 @@
-#!/usr/bin/env
+#!/usr/bin/env python3
 """annotated variables"""
 
 
-a: int = 1
-pi: float = 3.14
-i_understand_annotations: bool = True
+a: 5 = 1
+pi: 3.14 = 3.14
+i_understand_annotations: True = True
 school: str = "Holberton"
