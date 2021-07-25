@@ -3,10 +3,10 @@
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class MRUCache(BaseCaching):
-    """MRUCache:
+class LFUCache(BaseCaching):
+    """LFUCache:
         class that inherit from BaseCaching
-        LRU datastructure
+        LFU datastructure
     """
     def __init__(self):
         """constructor"""
