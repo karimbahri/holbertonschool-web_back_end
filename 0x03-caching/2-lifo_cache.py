@@ -4,9 +4,9 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """FIFOcache:
+    """LIFOcache:
         class that inherit from BaseCaching
-        FIFO datastructure
+        LIFO datastructure
     """
     def __init__(self):
         """constructor"""
