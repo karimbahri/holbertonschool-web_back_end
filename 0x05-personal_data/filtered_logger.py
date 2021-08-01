@@ -9,8 +9,8 @@ def filter_datum(fields: typing.List[str], redaction: str,
                  message: str, separator: str) -> str:
     """filter_datum: obfuscate log message"""
     for e in fields:
-        message = re.sub(r"%s=.+?%s" % (e, separator),
-                         "%s=%s%s" % (e, redaction, separator), message)
+        message = re.sub(f"%s=.+?%s" % (e, separator),
+                         f"%s=%s%s" % (e, redaction, separator), message)
     return message
 
 
