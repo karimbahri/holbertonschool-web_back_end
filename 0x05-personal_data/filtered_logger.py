@@ -38,5 +38,6 @@ class RedactingFormatter(logging.Formatter):
             it takes record (LogRecord) as argument
             and return obfuscated log
         """
-        return filter_datum(self.fields, self.REDACTION, super()
+        return filter_datum(self.fields, self.REDACTION,
+                            logging.Formatter(self.FORMAT)
                             .format(record), self.SEPARATOR)
