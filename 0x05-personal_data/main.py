@@ -3,10 +3,10 @@
 Main file
 """
 
-filter_datum = __import__('filtered_logger').filter_datum
+import logging
 
-fields = ["password", "date_of_birth"]
-messages = ["name=egg;email=eggmin@eggsample.com;password=eggcellent;date_of_birth=12/12/1986;", "name=bob;email=bob@dylan.com;password=bobbycool;date_of_birth=03/04/1993;"]
+get_logger = __import__('filtered_logger').get_logger
+PII_FIELDS = __import__('filtered_logger').PII_FIELDS
 
-for message in messages:
-    print(filter_datum(fields, 'xxx', message, ';'))
+print(get_logger.__annotations__.get('return'))
+print("PII_FIELDS: {}".format(len(PII_FIELDS)))
