@@ -4,6 +4,7 @@ from typing import List, TypeVar
 from flask import request
 
 
+
 class Auth:
     """Auth class
         API authentication
@@ -16,13 +17,24 @@ class Auth:
             check for authentication
             return boolean
         """
-        return False
+        if not path or not excluded_paths:
+            return True
+        if not len(excluded_paths):
+            return True
+        if path in excluded_paths or path[-1] == '/':
+            return False
+        if path[-1] != '/':
+            path.append('/')
+            return True
 
     def authorization_header(self, request=None) -> str:
         """authorization_header:
             return authorization header request
         """
-        return None
+        if not request:
+            return request
+        authorization = request.headers.get('Authorization')
+        return authorization
 
     def current_user(self, request=None) -> TypeVar('User'):
         """current_user:
