@@ -41,7 +41,7 @@ def forbiddenHandler(error) -> str:
 
 
 @app.before_request
-def before_req():
+def before_req() -> str:
     """before_req:
         filtering request
     """
