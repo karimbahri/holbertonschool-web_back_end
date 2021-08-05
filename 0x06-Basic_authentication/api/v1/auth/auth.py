@@ -24,7 +24,7 @@ class Auth:
             return False
         if path[-1] != '/':
             path.append('/')
-            return True
+        return True
 
     def authorization_header(self, request=None) -> str:
         """authorization_header:
