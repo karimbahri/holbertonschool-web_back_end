@@ -21,6 +21,7 @@ elif auth == 'basic_auth':
     from api.v1.auth.basic_auth import BasicAuth
     auth = BasicAuth
 
+
 @app.errorhandler(404)
 def not_found(error) -> str:
     """ Not found handler
