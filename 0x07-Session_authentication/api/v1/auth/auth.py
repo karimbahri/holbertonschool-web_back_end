@@ -40,10 +40,11 @@ class Auth:
         return: TypeVar
         """
         return None
+
     def session_cookie(self, request=None):
         """session_cookie:
             return a cookie value from a request
         """
         if request is None:
             return request
-        return request.cookies[getenv('SESSION_NAME')]
+        return request.cookies.get(getenv('SESSION_NAME'))
