@@ -55,7 +55,7 @@ def before_req() -> str:
     auth_list = ['/api/v1/status/', '/api/v1/unauthorized/',
                  '/api/v1/forbidden/', '/api/v1/auth_session/login/']
     if auth.authorization_header(request) and auth.session_cookie(request):
-        abort(401)
+        return abort(401)
     if auth.require_auth(request.path, auth_list) is False:
         return None
     if auth.authorization_header(request) is None:
