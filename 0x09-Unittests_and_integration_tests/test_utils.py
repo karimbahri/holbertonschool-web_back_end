@@ -21,7 +21,7 @@ class TestAccessNestedMap(unittest.TestCase):
     @parameterized.expand([
         ({}, ("a",), KeyError),
         ({"a": 1}, ("a", "b"), KeyError)
-    ])
+        ])
     def test_access_nested_map_exception(self, t_map, t_path):
         """
         test_access_nested_map_exception
