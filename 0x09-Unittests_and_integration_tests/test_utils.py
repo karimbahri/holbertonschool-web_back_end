@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """test_utils"""
-from _typeshed import Self
 import unittest
 from parameterized import parameterized
 from utils import access_nested_map
