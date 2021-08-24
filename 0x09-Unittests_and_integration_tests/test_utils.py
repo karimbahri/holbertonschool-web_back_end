@@ -20,6 +20,23 @@ class TestAccessNestedMap(unittest.TestCase):
         """test method : test access_nested_map"""
         self.assertEqual(access_nested_map(t_map, t_path), t_expected)
 
+    @parameterized.expand([
+        ({}, ("a",)),
+        ({"a": 1}, ("a", "b"))
+        ])
+    def test_access_nested_map_exception(self, t_map, t_path):
+        """
+        test_access_nested_map_exception
+        raise exception
+        test method:"""
+        self.assertRaises(KeyError, access_nested_map, t_map, t_path)
+
+
+"""class TestGetJson(unittest.TestCase):
+    TestGetJson class
+        json requests tests
+    """
+
 
 class TestMemoize(unittest.TestCase):
     """TestMemoize class"""
@@ -38,20 +55,3 @@ class TestMemoize(unittest.TestCase):
             self.assertEqual(t_class.a_property, mk.return_value)
             self.assertEqual(t_class.a_property, mk.return_value)
             mk.assert_called_once()
-
-    @parameterized.expand([
-        ({}, ("a",)),
-        ({"a": 1}, ("a", "b"))
-        ])
-    def test_access_nested_map_exception(self, t_map, t_path):
-        """
-        test_access_nested_map_exception
-        raise exception
-        test method:"""
-        self.assertRaises(KeyError, access_nested_map, t_map, t_path)
-
-
-"""class TestGetJson(unittest.TestCase):
-    TestGetJson class
-        json requests tests
-    """
