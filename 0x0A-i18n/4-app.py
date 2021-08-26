@@ -37,7 +37,7 @@ def render_html():
         the rendering the given
         html filels
     """
-    return render_template('3-index.html')
+    return render_template('4-index.html')
 
 
 @babel.localeselector
@@ -46,6 +46,10 @@ def get_locale():
         function to find the best match language
         return : request.accept_languages.best_match
     """
+    query = flask.request.args
+    local = query.get('locale')
+    if local:
+        return local
     return flask.request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
