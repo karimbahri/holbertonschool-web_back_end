@@ -37,7 +37,7 @@ def render_html():
         the rendering the given
         html filels
     """
-    return render_template('2-index.html')
+    return render_template('3-index.html')
 
 
 @babel.localeselector
