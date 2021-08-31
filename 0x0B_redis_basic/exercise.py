@@ -4,9 +4,25 @@ from typing import Union
 from typing import Optional
 from typing import Callable
 from typing import Any
+import functools
 
 from redis import Redis
 from uuid import uuid4
+
+
+def count_calls(fn: Callable) -> Callable:
+    """wrap the fn callable function
+        and return it
+    """
+    @functools.wraps
+    def wrapper(self, *args, **kwds):
+        """count: increment iterator every time
+        the fn callable function is called
+        and return it
+        """
+        self._redis.incr(fn.__qualname__)
+        return fn(self, *args, **kwds)
+    return wrapper
 
 
 class Cache:
@@ -26,6 +42,7 @@ class Cache:
         self._redis = Redis()
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """store:
             public method
