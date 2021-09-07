@@ -9,13 +9,7 @@ def top_students(mongo_collection):
     """
     stages = [
         {
-            '$group': {
-                '_id': 'null'
-            }
-        },
-        {
             '$project': {
-                '_id': 0,
                 'name': '$name',
                 'averageScore': {'$avg': '$topics.score'}
             }
