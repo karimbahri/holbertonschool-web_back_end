@@ -16,7 +16,7 @@ def top_students(mongo_collection):
             }
         },
         {
-            {'$sort': {'averageScore': -1}}
+            '$sort': {'averageScore': -1}
         },
         {
             '$project': {
