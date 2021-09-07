@@ -10,18 +10,18 @@ def top_students(mongo_collection):
     stages = [
         {
             '$group': {
-                '_id': 'null',
+                '_id': 'null'
+            }
+        },
+        {
+            '$project': {
+                '_id': 0,
                 'name': '$name',
                 'averageScore': {'$avg': '$topics.score'}
             }
         },
-        {
+                {
             '$sort': {'averageScore': -1}
-        },
-        {
-            '$project': {
-                '_id': 0
-            }
         }
     ]
     mongo_collection.aggregate(stages)
