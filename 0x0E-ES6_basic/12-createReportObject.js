@@ -9,7 +9,7 @@ function createEmployeesObject(departmentName, employees) {
 export default function createReportObject(employeesList) {
     const size = Object.keys(employeesList).length;
   return {
-      allEmployees: { ...employeesList },
+      allEmployees: employeesList,
       getNumberOfDepartments: () => size,
   };
 };
