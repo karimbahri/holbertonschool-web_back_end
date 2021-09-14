@@ -1,4 +1,6 @@
-const getResponseFromAPI = () => {
-  return new Promise((resolve) => resolve());
-};
-exports.getResponseFromAPI;
+function getResponseFromAPI() {
+  return new Promise((resolve) => {
+    resolve();
+  });
+}
+export default getResponseFromAPI;
