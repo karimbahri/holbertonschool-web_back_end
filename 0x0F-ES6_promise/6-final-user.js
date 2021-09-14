@@ -3,7 +3,7 @@ import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  return new Promise(async () => {
+  return new Promise(async (resolve) => {
     const resolved = {
       status: 'fulfilled',
       value: await signUpUser(firstName, lastName),
@@ -14,6 +14,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         err.toString();
       }),
     };
-    return [resolved, rejected];
+    return resolve([resolved, rejected]);
   });
 }
