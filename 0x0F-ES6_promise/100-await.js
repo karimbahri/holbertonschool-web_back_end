@@ -1,12 +1,10 @@
 /* eslint-disable */
-import uploadPhoto from './utils';
-import createUser from './utils';
-let photo;
-let user;
+import { uploadPhoto, createUser } from './utils';
+
 async function asyncUploadUser() {
   try {
-    photo = await uploadPhoto();
-    user = await createUser();
+    let photo = await uploadPhoto();
+    let user = await createUser();
     return { photo, user };
   } catch (err) {
     return { photo: null, user: null };
