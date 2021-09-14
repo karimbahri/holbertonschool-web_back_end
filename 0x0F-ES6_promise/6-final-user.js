@@ -12,7 +12,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     try {
       await uploadPhoto(fileName);
     } catch (err) {
-      photoPromise = err.toString();
+      photoPromise = String(err);
     }
     const rejected = {
       status: 'rejected',
