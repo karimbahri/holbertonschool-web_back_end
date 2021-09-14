@@ -1,6 +1,7 @@
 /* eslint-disable */
-const uploadPhoto = require('./utils').uploadPhoto;
-const createUser = require('./utils').createUser;
+// const uploadPhoto = require('./utils').uploadPhoto;
+// const createUser = require('./utils').createUser;
+import { uploadPhoto, createUser } from './utils';
 
 function handleProfileSignup() {
   return Promise.all([uploadPhoto(), createUser()])
