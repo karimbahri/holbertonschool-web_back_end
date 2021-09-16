@@ -23,10 +23,14 @@ export default class HolbertonCourse {
   set students(students) {
     if (
       !(students instanceof Array) ||
-      students.forEach((el) => typeof el !== 'string')
+      check_elements_type('string', students)
     ) {
       throw new TypeError('Students must be an array of strings');
     }
     this._students = students;
   }
 }
+
+const check_elements_type = (type, array) => {
+  for (let el of array) if (typeof el !== 'string') return true;
+};
