@@ -26,5 +26,6 @@ export default class HolbertonCourse {
     ) {
       throw new Error('Students must be an array of strings');
     }
+    this._students = students;
   }
 }
