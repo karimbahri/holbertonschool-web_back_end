@@ -29,6 +29,9 @@ export default class HolbertonCourse {
     }
     this._students = students;
   }
+  get students() {
+    return this._students;
+  }
 }
 
 const check_elements_type = (type, array) => {
