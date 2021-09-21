@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default function cleanSet(set, startString) {
   const data = Array();
-  if (startString !== "") {
+  if (startString !== "" && typeof startString === "string") {
     for (let element of set) {
       if (element.startsWith(startString))
         data.push(element.slice(startString.length));
