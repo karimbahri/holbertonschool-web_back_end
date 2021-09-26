@@ -4,7 +4,7 @@ module.exports = (path) => {
   try {
     const dbs = fs.readFileSync(path, "utf-8").split(/\r?\n/);
     // nbFields[0] -> SWE, nbFields[1] -> CS
-    const nbFields = [];
+    const nbFields = [0, 0];
     const csList = [];
     const SWEList = [];
     console.log(`Number of students: ${dbs.length - 1}`);
@@ -20,13 +20,11 @@ module.exports = (path) => {
     }
     if (csList.length)
       console.log(
-        `Number of students in CS: ${csList.length}. List: ${csList.join(", ")}`
+        `Number of students in CS: ${nbFields[1]}. List: ${csList.join(", ")}`
       );
     if (SWEList.length)
       console.log(
-        `Number of students in SWE: ${SWEList.length}. List: ${SWEList.join(
-          ", "
-        )}`
+        `Number of students in SWE: ${nbFields[0]}. List: ${SWEList.join(", ")}`
       );
   } catch (err) {
     console.log("Cannot load the database");
