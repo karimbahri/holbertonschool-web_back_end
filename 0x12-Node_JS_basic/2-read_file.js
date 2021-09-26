@@ -30,6 +30,6 @@ module.exports = (path) => {
         `Number of students in SWE: ${nbFields[0]}. List: ${SWEList.join(", ")}`
       );
   } catch (err) {
-    console.log("Cannot load the database");
+    throw Error("Cannot load the database");
   }
 };
