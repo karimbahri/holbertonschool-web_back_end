@@ -24,8 +24,8 @@ export default function (path) {
           }
         }
         const resoved = {
-          csList,
-          SWEList,
+          CS: csList,
+          SWE: SWEList,
         };
         resolve(resoved);
       }
