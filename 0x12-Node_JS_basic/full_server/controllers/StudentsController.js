@@ -28,13 +28,13 @@ export default class StudentsController {
       readDatabase(path)
         .then((data) => {
           if (params.major === "SWE") {
-            response.status(200).send(`List: ${data.SWEList.join(", ")}`);
+            response.status(200).send(`List: ${data.SWE.join(", ")}`);
           } else if (params.major === "CS") {
-            response.status(200).send(`List: ${data.csList.join(", ")}`);
+            response.status(200).send(`List: ${data.CS.join(", ")}`);
           }
         })
         .catch((err) => {
-          response.status(500).send(`Cannot load the database`);
+          response.status(500).send(err.message);
         });
     }
   }
