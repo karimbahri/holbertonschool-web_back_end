@@ -1,6 +1,7 @@
 /* eslint-disable */
 describe("calculateNumber-test", function () {
-  const exprect = require("chai").expect;
+  const chai = require("chai");
+  const exprect = chai.exprect;
   const calculateNumber = require("./2-calcul_chai");
 
   it("checking for simple operation", function () {
@@ -14,6 +15,8 @@ describe("calculateNumber-test", function () {
     exprect(calculateNumber("DIVIDE", 1.4, 4.5)).to.equal(0.2);
 
     exprect(calculateNumber("DIVIDE", 1.4, 0)).to.equal("Error");
+  });
+  it("checking for edges cases", function () {
     exprect(isNaN(calculateNumber(1, 3))).to.equal(true);
     exprect(isNaN(calculateNumber("DIVID", 1.4, 0))).to.equal(true);
     exprect(isNaN(calculateNumber())).to.equal(true);
