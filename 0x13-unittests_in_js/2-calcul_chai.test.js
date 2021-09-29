@@ -1,7 +1,6 @@
 /* eslint-disable */
 describe("calculateNumber-test", function () {
-  const chai = require("chai");
-  const exprect = chai.exprect;
+  const exprect = require("chai").expect;
   const calculateNumber = require("./2-calcul_chai");
 
   it("checking for simple operation", function () {
