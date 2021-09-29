@@ -8,5 +8,5 @@ module.exports = function (type, a, b) {
     ? b !== 0
       ? Math.round(a) / Math.round(b)
       : "Error"
-    : NaN;
+    : undefined;
 };
