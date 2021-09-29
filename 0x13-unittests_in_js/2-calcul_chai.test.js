@@ -1,7 +1,7 @@
 /* eslint-disable */
 describe("calculateNumber-test", function () {
   const exprect = require("chai").expect;
-  const calculateNumber = require("./1-calcul");
+  const calculateNumber = require("./2-calcul_chai");
 
   it("checking for simple operation", function () {
     exprect(calculateNumber("SUM", 1, 3)).to.equal(4);
