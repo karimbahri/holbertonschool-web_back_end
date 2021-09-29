@@ -16,7 +16,7 @@ describe("calculateNumber-test", function () {
     assert.equal(calculateNumber("DIVIDE", 1.4, 0), "Error");
   });
   it("checking for edges cases", function () {
-    assert.equal(calculateNumber(1, 3), undefined);
-    assert.equal(calculateNumber("DIVID", 1.4, 0), undefined);
+    assert.equal(isNaN(calculateNumber(1, 3)), true);
+    assert.equal(isNaN(calculateNumber("DIVID", 1.4, 0)), true);
   });
 });
