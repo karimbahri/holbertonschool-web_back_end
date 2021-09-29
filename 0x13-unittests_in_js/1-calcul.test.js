@@ -24,6 +24,5 @@ describe("calculateNumber-test", function () {
     assert.equal(calculateNumber("DIVIDE", 1.4, -4.5), -0.25);
     assert.equal(calculateNumber("DIVIDE", -1.4, 4.5), -0.2);
     assert.equal(calculateNumber("DIVIDE", -1.4, -4.5), 0.25);
-    assert.equal(calculateNumber("DIVIDE", 1.4, 0.4), "Error");
   });
 });
